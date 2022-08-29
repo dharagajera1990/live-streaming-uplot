@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import Data from "./Data";
 
 export default function Plot({width,height}) {
-  console.log("plot contanier width:",width)
   const [toggle, setToggle] = useState(false);
   const [plot, setPlot] = useState();
   
@@ -137,11 +136,11 @@ export default function Plot({width,height}) {
 
   function getSize() {
     return {
-      width: width *100 ,//(window.innerWidth ) /3,
-      height: height*100+80//(window.innerHeight )/2 + 50,
+      width: width,//width*100,//(window.innerWidth ) /3,
+      height: height//height*100+80//(window.innerHeight )/2 + 50,
     }
   }
-  
+
   const opts = {
     title: "Chart 1 Live streaming",
     //width: 500,
@@ -186,10 +185,6 @@ export default function Plot({width,height}) {
       setPlot(plot);
     }
   }
-  /*window.addEventListener("resize", e => {
-    console.log("-------------------");
-    setPlot(plot);
-  });*/
 
   return (
     <div>

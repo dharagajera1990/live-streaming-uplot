@@ -9,10 +9,18 @@ import Plot2 from './Plot2';
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const UplotChart = () => {
-    const [chart1width,setChart1width] = useState(5);
-    const [chart1height,setChart1height] = useState(3);
-    const [chart2width,setChart2width] = useState(5);
-    const [chart2height,setChart2height] = useState(3);
+    let w = 0,h=0;
+    if(window.innerWidth < 500){
+      w = window.innerWidth-50;
+    }else{
+      w = 5*100;
+    }
+    h = 3*100+80;
+
+    const [chart1width,setChart1width] = useState(w);
+    const [chart1height,setChart1height] = useState(h);
+    const [chart2width,setChart2width] = useState(w);
+    const [chart2height,setChart2height] = useState(h);
 
     const layout = [
         { i: 'a', x: 0, y: 0, w: 5, h: 3 },
@@ -21,10 +29,10 @@ const UplotChart = () => {
       ];
 
       const onResize = (event) => {
-        setChart1width(event[0].w);
-        setChart1height(event[0].h);
-        setChart2width(event[1].w);
-        setChart2height(event[1].h);
+        setChart1width(event[0].w*100);
+        setChart1height(event[0].h*100+80);
+        setChart2width(event[1].w*100);
+        setChart2height(event[1].h*100+80);
       };
 
   return (

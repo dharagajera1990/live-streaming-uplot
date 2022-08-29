@@ -3,7 +3,7 @@ import uPlot from "uplot";
 import "/node_modules/uplot/dist/uPlot.min.css";
 import Sidebar from './Sidebar'
 import { BsPencilSquare,BsTrash } from "react-icons/bs";
-import { useDispatch, useSelector } from "react-redux";
+import {useSelector } from "react-redux";
 import Data from "./Data";
 
 export default function Plot2({width,height}) {
@@ -135,8 +135,8 @@ export default function Plot2({width,height}) {
 
   function getSize() {
     return {
-      width: width *100 ,//(window.innerWidth ) /3,
-      height: height*100+80//(window.innerHeight )/2 + 50,
+      width: width,//width *100 ,//(window.innerWidth ) /3,
+      height: height //height*100+80//(window.innerHeight )/2 + 50,
     }
   }
 

@@ -1,8 +1,8 @@
 import React, {useState, useEffect } from "react";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setData } from "../redux/actions/productsActions";
 
-const Data = ({chart}) => {
+const Data = () => {
    // const stateData = useSelector((state) => state.data.data);
     const NOW = Math.floor(Date.now() / 1e3);
     let LENGTH =200;
