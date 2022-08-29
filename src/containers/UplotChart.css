@@ -1,0 +1,12 @@
+.main-wrapper{
+    margin-top: 50px !important;
+}
+.chart-wrapper{
+    border: 2px solid gray;
+    padding: 10px;
+}
+.conditional-note
+{
+   background-color: antiquewhite;
+   z-index: 2;
+}
