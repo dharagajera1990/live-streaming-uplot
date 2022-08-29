@@ -6,9 +6,11 @@ import { BsPencilSquare,BsTrash } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import Data from "./Data";
 
-export default function Plot() {
+export default function Plot({width,height}) {
+  console.log("plot contanier width:",width)
   const [toggle, setToggle] = useState(false);
   const [plot, setPlot] = useState();
+  
 
   const plotRef = useRef();
   const stateData = useSelector((state) => state.data.data);
@@ -135,8 +137,8 @@ export default function Plot() {
 
   function getSize() {
     return {
-      width: (window.innerWidth ) /3,
-      height: (window.innerHeight )/2 + 50,
+      width: width *100 ,//(window.innerWidth ) /3,
+      height: height*100+80//(window.innerHeight )/2 + 50,
     }
   }
   
@@ -184,10 +186,10 @@ export default function Plot() {
       setPlot(plot);
     }
   }
-  window.addEventListener("resize", e => {
+  /*window.addEventListener("resize", e => {
     console.log("-------------------");
     setPlot(plot);
-  });
+  });*/
 
   return (
     <div>
